@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f8">
+  <title>Resume Studio — Build your resume</title>
+  <link rel="stylesheet" href="./style.css?v=3">
+  <script src="./script.js?v=3" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Resume Studio home"><span class="brand-mark" aria-hidden="true">R</span><span>resume<span class="brand-light">studio</span></span></a>
+    <div class="topbar-note"><span class="online-dot" aria-hidden="true"></span> Your information stays on this device</div>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <div><p class="eyebrow">Your next chapter starts here</p><h1>Make your experience stand out.</h1><p class="intro-copy">Add your details and watch your resume come together.</p></div>
+      <button class="print-button" id="print-resume" type="button"><span aria-hidden="true">↓</span> Download Resume as PDF</button>
+    </section>
+    <div class="builder-layout">
+      <section class="editor-panel" aria-labelledby="editor-title">
+        <div class="panel-heading"><div><span class="section-kicker">STEP 1</span><h2 id="editor-title">Your information</h2></div><span class="live-badge"><span class="online-dot" aria-hidden="true"></span> Live</span></div>
+        <form id="resume-form" autocomplete="on">
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">01</span><div><h3>Personal details</h3><p>Start with how employers can reach you.</p></div></div>
+            <div class="field-grid">
+              <div class="field span-2"><label for="full-name">Full name</label><input id="full-name" name="fullName" autocomplete="name" placeholder="Enter your name"></div>
+              <div class="field span-2"><label for="professional-title">Professional title</label><input id="professional-title" name="title" placeholder="Professional title"></div>
+              <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+              <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Enter your phone number"></div>
+              <div class="field span-2"><label for="address">Address</label><input id="address" name="address" autocomplete="street-address" placeholder="City, Country"></div>
+              <div class="field span-2"><label for="photo">Profile photo</label><input class="photo-input" id="photo" name="photo" type="file" accept="image/*" aria-describedby="photo-help"><p class="field-hint" id="photo-help">Choose an image from your device gallery or files.</p></div>
+            </div>
+          </section>
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">02</span><div><h3>About me</h3><p>A short introduction or career objective.</p></div></div><div class="field"><label for="objective">About me / Career objective</label><textarea id="objective" name="objective" rows="4" placeholder="Write a few sentences about your goals, strengths, and the work you hope to do."></textarea></div></section>
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">03</span><div><h3>Education</h3><p>Add your degrees, courses, or certifications.</p></div></div><div class="repeat-list" id="education-list" data-list="education"></div><button class="add-button" type="button" data-add="education"><span aria-hidden="true">+</span> Add education</button></section>
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">04</span><div><h3>Skills</h3><p>Add skills relevant to the role.</p></div></div><div class="repeat-list" id="skills-list" data-list="skills"></div><button class="add-button" type="button" data-add="skills"><span aria-hidden="true">+</span> Add a skill</button></section>
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">05</span><div><h3>Experience</h3><p>Include internships, jobs, or volunteer roles.</p></div></div><div class="repeat-list" id="experience-list" data-list="experience"></div><button class="add-button" type="button" data-add="experience"><span aria-hidden="true">+</span> Add experience</button></section>
+          <section class="form-section"><div class="form-section-heading"><span class="section-icon" aria-hidden="true">06</span><div><h3>Projects</h3><p>Show what you have built and contributed to.</p></div></div><div class="repeat-list" id="projects-list" data-list="projects"></div><button class="add-button" type="button" data-add="projects"><span aria-hidden="true">+</span> Add project</button></section>
+        </form>
+      </section>
+      <section class="preview-panel" aria-labelledby="preview-title">
+        <div class="preview-toolbar"><div><span class="section-kicker">STEP 2</span><h2 id="preview-title">Resume preview</h2></div><span class="paper-label"><span class="paper-icon" aria-hidden="true"></span> A4 · Portrait</span></div>
+        <article class="resume-page" id="resume-preview" aria-label="Live resume preview">
+          <aside class="resume-sidebar">
+            <div class="profile-block"><div class="profile-frame"><div class="profile-placeholder" id="profile-placeholder" aria-hidden="true">PHOTO</div><img id="preview-photo" class="profile-photo" alt="Profile photo" hidden></div><h2 class="sidebar-name" id="preview-name">Your Name</h2><p class="sidebar-title" id="preview-title-text">Professional Title</p></div>
+            <section class="sidebar-section"><h3>Contact</h3><div class="contact-list"><div class="contact-row"><span class="contact-icon" aria-hidden="true">@</span><span id="preview-email">you@example.com</span></div><div class="contact-row"><span class="contact-icon" aria-hidden="true">☎</span><span id="preview-phone">Phone number</span></div><div class="contact-row"><span class="contact-icon" aria-hidden="true">⌖</span><span id="preview-address">City, Country</span></div></div></section>
+            <section class="sidebar-section"><h3>Education</h3><div class="sidebar-entries" id="preview-education"><p class="preview-empty">Your education will appear here.</p></div></section>
+            <section class="sidebar-section"><h3>Skills</h3><div class="preview-skills" id="preview-skills"><span class="preview-empty">Your skills will appear here.</span></div></section>
+          </aside>
+          <div class="resume-main"><section class="main-section about-section"><div class="main-heading"><span class="heading-rule"></span><h3>About me</h3></div><p class="objective-copy" id="preview-objective">Your introduction or career objective will appear here.</p></section><section class="main-section"><div class="main-heading"><span class="heading-rule"></span><h3>Experience</h3></div><div class="timeline-list" id="preview-experience"><p class="preview-empty">Your experience will appear here.</p></div></section><section class="main-section"><div class="main-heading"><span class="heading-rule"></span><h3>Projects</h3></div><div class="project-list" id="preview-projects"><p class="preview-empty">Your projects will appear here.</p></div></section></div>
+        </article>
+        <p class="print-hint" id="export-status" aria-live="polite">Your PDF downloads directly to your device.</p>
+      </section>
+    </div>
+  </main>
+  <template id="education-template"><div class="repeat-item" data-entry><button class="remove-button" type="button" data-remove aria-label="Remove education entry">×</button><div class="field-grid"><div class="field"><label>Degree or qualification</label><input data-field="degree" placeholder="Degree or course"></div><div class="field"><label>School or institution</label><input data-field="school" placeholder="School or institution"></div><div class="field span-2"><label>Year or dates</label><input data-field="period" placeholder="Year or dates"></div><div class="field span-2"><label>Details</label><textarea data-field="details" rows="2" placeholder="Relevant achievements or focus areas"></textarea></div></div></div></template>
+  <template id="skills-template"><div class="repeat-item compact-item" data-entry><button class="remove-button" type="button" data-remove aria-label="Remove skill">×</button><div class="field"><label>Skill</label><input data-field="skill" placeholder="Enter a skill"></div></div></template>
+  <template id="experience-template"><div class="repeat-item" data-entry><button class="remove-button" type="button" data-remove aria-label="Remove experience entry">×</button><div class="field-grid"><div class="field"><label>Role or position</label><input data-field="role" placeholder="Role or position"></div><div class="field"><label>Company or organization</label><input data-field="company" placeholder="Company or organization"></div><div class="field span-2"><label>Dates</label><input data-field="period" placeholder="Month Year – Month Year"></div><div class="field span-2"><label>What you did</label><textarea data-field="details" rows="3" placeholder="Describe your contribution and results"></textarea></div></div></div></template>
+  <template id="projects-template"><div class="repeat-item" data-entry><button class="remove-button" type="button" data-remove aria-label="Remove project entry">×</button><div class="field-grid"><div class="field span-2"><label>Project name</label><input data-field="name" placeholder="Project name"></div><div class="field span-2"><label>Project details</label><textarea data-field="details" rows="3" placeholder="What you built, tools used, and the result"></textarea></div></div></div></template>
+</body>
+</html>
